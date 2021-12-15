@@ -11,6 +11,13 @@ yarn
 yarn start 
 ```
 ---
+
+## Git Flow
+* Before commiting there must be no errors or warning on linting
+* Commiting while there's an error it will not commit your changes.
+* run yarn or npm lint to for linting erros / warnings.
+
+---
 ## Tools and Library
 * ReactJS
 * Typescript
