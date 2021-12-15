@@ -14,6 +14,7 @@
     "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-query": "^3.34.3",
     "react-router-dom": "^6.1.1",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
@@ -21,12 +22,20 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "prepare": "husky install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "eslint src --cache --max-warnings=0"
+    "lint": "eslint src --cache --max-warnings=0 ",
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "echo \"[Husky] pre-commit"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +57,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.2",
+    "@types/styled-components": "^5.1.18",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "eslint": "^8.4.1",
@@ -60,6 +70,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
     "prettier": "^2.5.1"
   }
 }

@@ -46,7 +46,7 @@ export const useAxios = () => {
     },
   );
 
-  const GET = async <R, P, B>(args: IAxios<P, B>): Promise<AxiosResponse<R>> => {
+  const GET = async <R, P = unknown, B = unknown>(args: IAxios<P, B>): Promise<AxiosResponse<R>> => {
     try {
       return await instance({
         ...args,
@@ -57,7 +57,7 @@ export const useAxios = () => {
     }
   };
 
-  const POST = async <R, P, B>(args: IAxios<P, B>): Promise<AxiosResponse<R>> => {
+  const POST = async <R, P = unknown, B = unknown>(args: IAxios<P, B>): Promise<AxiosResponse<R>> => {
     try {
       return await instance({
         ...args,
