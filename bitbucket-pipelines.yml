@@ -1,4 +1,7 @@
 image: atlassian/default-image:3
+options:
+  docker: true
+  size: 2x
 
 pipelines:
   tags:
@@ -59,3 +62,8 @@ pipelines:
             - docker push "${IMAGE}:latest"
           services:
             - docker
+
+definitions:
+  services: 
+    docker:
+      memory: 4096
