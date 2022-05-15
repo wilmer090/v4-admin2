@@ -1,9 +1,11 @@
 import React from 'react';
 
+import ClientsView from './ClientsView';
+
 const ClientsContainer = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <ClientsView />
     </div>
   );
 };

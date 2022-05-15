@@ -1,0 +1,52 @@
+{
+  "authors": [
+    {
+      "id": 1,
+      "country": "usa",
+      "author_publications": [
+        "new york times"
+      ],
+      "author_score": [],
+      "created_by": null,
+      "updated_by": null,
+      "author_profile_pic": "",
+      "author_tag": "author",
+      "author_reputation_score": 0,
+      "author_activity_score": 0,
+      "social_media_links": {
+        "twitter": {
+          "profile_url": "",
+          "follower_count": "",
+          "tweets_count": ""
+        },
+        "instagram": {
+          "profile_url": ""
+        },
+        "facebook": {
+          "profile_url": ""
+        },
+        "linkedin": {
+          "profile_url": ""
+        },
+        "youtube": {
+          "profile_url": ""
+        },
+        "flickr": {
+          "profile_url": ""
+        },
+        "pinterest": {
+          "profile_url": ""
+        }
+      },
+      "contact_information": {
+        "contact_phone": "",
+        "contact_email": "washington@gmail.com"
+      },
+      "aut_id": 11428,
+      "author_name": "george washington",
+      "is_verified": false,
+      "date_created": null,
+      "date_updated": null
+    }
+  ]
+}

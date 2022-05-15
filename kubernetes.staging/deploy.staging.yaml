@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v4-mm-admin-staging
+  namespace: staging
+  labels:
+    app: v4-mm-admin-staging
+    tier: front-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v4-mm-admin-staging
+  template:
+    metadata:
+      labels:
+        app: v4-mm-admin-staging
+    spec:
+      containers:
+        - name: v4-mm-admin-staging
+          image: zen0hub/v4-mm-admin-staging:220408.0
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred

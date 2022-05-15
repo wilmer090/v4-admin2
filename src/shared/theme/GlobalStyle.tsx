@@ -9,5 +9,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1.4;
+    background-color: #F7F9FC;
   }
+  
+
+
 `;

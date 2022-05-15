@@ -1,6 +1,10 @@
+/* eslint-disable no-console */
 import axios, { AxiosResponse } from 'axios';
 import { CONFIG } from 'shared/config/config';
 import { IAxios } from 'shared/interfaces/utils/IAxios';
+import { Alert } from 'shared/theme/elements';
+import { ls } from 'shared/utils/ls';
+
 export const useAxios = () => {
   const instance = axios.create({
     baseURL: CONFIG.API_URL,
@@ -23,6 +27,7 @@ export const useAxios = () => {
     },
     (error) => {
       if (CONFIG.isDevelopment) console.log(error);
+
       return Promise.reject(error);
     },
   );
@@ -40,13 +45,23 @@ export const useAxios = () => {
       return response;
     },
     (error) => {
+      if (error.response) {
+        if (error.response.status === 401) {
+          ls.remove('user');
+          Alert.error('', 'Token expired!. Please Login Again.');
+          setTimeout(() => {
+            window.location.reload();
+          }, 500);
+        }
+      }
       if (CONFIG.isDevelopment) console.log(error);
-
       return Promise.reject(error);
     },
   );
 
   const GET = async <R, P = unknown, B = unknown>(args: IAxios<P, B>): Promise<AxiosResponse<R>> => {
+    console.log('args', args);
+
     try {
       return await instance({
         ...args,
@@ -83,7 +98,7 @@ export const useAxios = () => {
     try {
       return await instance({
         ...args,
-        method: 'PUT',
+        method: 'DELETE',
       });
     } catch (e) {
       throw e;
